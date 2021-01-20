@@ -34,7 +34,6 @@ userRouter.post('/register', async (req, res) => {
 
     // writing user to DB
     const savedUser = await user.save();
-    res.header("Access-Control-Allow-Origin", "*");
     res.json(savedUser);
   } catch (err) {
     res.status(500).json({ error: err.message });
